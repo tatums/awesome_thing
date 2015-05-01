@@ -17,8 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  username: postgres
+  password:
+  host: db
   pool: 5
 
 development:
@@ -27,10 +28,6 @@ development:
 
 production:
   <<: *default
-  username: postgres
-  password:
-  host: db
-  pool: 5
   database: awesome_thing_production
 
 test:
